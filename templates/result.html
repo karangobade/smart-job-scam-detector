@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Detection Result</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #1c1c1c, #000);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .result-box {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 35px;
+      width: 90%;
+      max-width: 600px;
+      border: 1px solid rgba(0, 255, 128, 0.15);
+      box-shadow: 0 0 20px rgba(0, 255, 128, 0.15);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .result {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .scam { color: #ff4d4d; }
+    .legit { color: #00ff88; }
+
+    .confidence, .explanation, .extracted {
+      margin-top: 12px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    a {
+      margin-top: 25px;
+      display: inline-block;
+      color: #00ff88;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-shadow: 0 0 5px #00ff88;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    <div class="result {{ 'legit' if 'Legit' in result else 'scam' }}">
+      {{ result }}
+    </div>
+
+    <div class="confidence">
+      <strong>Confidence:</strong> {{ confidence }}%
+    </div>
+
+    {% if extracted %}
+    <div class="extracted">
+      <strong>Extracted from Image:</strong><br>{{ extracted }}
+    </div>
+    {% endif %}
+
+    <div class="explanation">
+      <strong>Why?</strong> {{ explanation }}
+    </div>
+
+    <a href="/">🔁 Analyze Another</a>
+  </div>
+</body>
+</html>
