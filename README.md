@@ -17,8 +17,14 @@ An AI-powered web application that detects fraudulent job postings from **text i
 - **Frontend:** HTML, CSS, JS (Jinja templates)
 
 ## Screenshot
-
+1.simple user interface
 ![App Screenshot](img/base.png)
+
+2.enter job description(text or img )
+![App Screenshot](img/des.png)
+
+3.predict the result
+![App Screenshot](img/det.png)
 
 ## How It Works
 
