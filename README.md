@@ -18,7 +18,7 @@ An AI-powered web application that detects fraudulent job postings from **text i
 
 ## Screenshot
 
-![App Screenshot](img/screenshot.png)
+![App Screenshot](img/base.png)
 
 ## How It Works
 
